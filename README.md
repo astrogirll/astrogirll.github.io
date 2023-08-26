@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -20,7 +21,7 @@
   .navbar a {
     float: left;
     display: block;
-    color: #333; /* Dark Gray */
+    color: #fff; /* White */
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -35,7 +36,7 @@
   .menu-button {
     display: none;
     background-color: #7f9c9f; /* Icy Blue */
-    color: #333; /* Dark Gray */
+    color: #fff; /* White */
     padding: 10px 15px;
     border: none;
     cursor: pointer;
