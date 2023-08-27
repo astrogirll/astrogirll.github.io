@@ -54,8 +54,28 @@
     border-radius: 10px;
     padding: 20px;
     margin: 10px;
-    width: 300px;
+    width: calc(50% - 20px); /* Two cards per row */
     text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .blog-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .read-more-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #82b5d8; /* Light Blue */
+    color: #fff; /* White */
+    border-radius: 20px; /* Curved edges */
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .read-more-button:hover {
+    background-color: #5c8fb1; /* Darker Blue on hover */
   }
 </style>
 </head>
@@ -63,7 +83,7 @@
 
 <div class="navbar">
   <a class="active" href="#">HOME</a>
-  <a href="blognavbar.html" >BLOG</a>
+  <a href="blog.html" >BLOG</a>
   <a href="About.html">ABOUT</a>
   <a href="contact.html">CONTACT</a>
   <button class="menu-button">&#9776; Menu</button>
@@ -75,15 +95,44 @@
 <div class="blogs-container">
   <div class="blog-card">
     <h2>Blog title 1</h2>
-    <p>short excerpt.</p>
-    <a href="#">Read More</a>
+    <p>Short excerpt 1.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
   </div>
   <div class="blog-card">
     <h2>Blog title 2</h2>
-    <p>short excerpt</p>
-    <a href="blog.html">Read More</a>
+    <p>Short excerpt 2.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
   </div>
-  <!-- Add more blog cards here -->
+  <div class="blog-card">
+    <h2>Blog title 3</h2>
+    <p>Short excerpt 3.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+  </div>
+  <div class="blog-card">
+    <h2>Blog title 4</h2>
+    <p>Short excerpt 4.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+  </div>
+  <div class="blog-card">
+    <h2>Blog title 5</h2>
+    <p>Short excerpt 5.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+  </div>
+  <div class="blog-card">
+    <h2>Blog title 6</h2>
+    <p>Short excerpt 6.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+  </div>
+  <div class="blog-card">
+    <h2>Blog title 7</h2>
+    <p>Short excerpt 7.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+  </div>
+  <div class="blog-card">
+    <h2>Blog title 8</h2>
+    <p>Short excerpt 8.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+  </div>
 </div>
 
 <script>
