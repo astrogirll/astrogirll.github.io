@@ -63,8 +63,8 @@
 
 <div class="navbar">
   <a class="active" href="#">HOME</a>
-  <a href="blog.html.txt" >BLOG</a>
-  <a href="About.html.txt">ABOUT</a>
+  <a href="blog.html" >BLOG</a>
+  <a href="About.html">ABOUT</a>
   <a href="#">CONTACT</a>
   <button class="menu-button">&#9776; Menu</button>
 </div>
