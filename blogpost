@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog title</title>
+<style>
+  :root {
+    --annotations-height: calc(100vh / 8);
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .section {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    color: #3478b5; /* Blue Shade */
+    margin-bottom: 10px;
+  }
+
+  .content-section {
+    display: flex;
+    flex-direction: column; /* Change to column */
+    width: 100%;
+    height: auto; /* Change to auto */
+  }
+
+  .post-box {
+    margin-bottom: 20px; /* Add margin for separation */
+    padding: 20px;
+    background-color: #f0f0f0; /* Lightest Gray */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333; /* Dark Gray */
+  }
+
+  .post-content {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .annotations-box {
+    padding: 20px;
+    background-color: #f5f5f5; /* Light Gray */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333; /* Dark Gray */
+    height: auto; /* Change to auto */
+    overflow: auto;
+    margin-bottom: 10px; /* Add margin at the bottom */
+  }
+
+  .annotations-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+  }
+
+  .comments-section {
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+    background-color: #3478b5; /* Blue Shade */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff; /* White */
+    margin-top: 10px; /* Add margin at the top */
+  }
+
+  .comment-form {
+    margin-top: 20px;
+    text-align: center; /* Center align the comment form */
+  }
+
+  .comment-input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .comment-button {
+    background-color: #82b5d8; /* Light Blue */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="main-container">
+  <div class="section">
+    <h1 class="section-title" style="color: #3478b5;">Discover the Winter Wonders</h1>
+  </div>
+
+  <div class="content-section">
+    <div class="post-box">
+      <div class="post-content">
+        <p>This is the first paragraph of the blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Here's another paragraph with more insights about the topic. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+      </div>
+    </div>
+
+    <div class="annotations-box">
+      <textarea class="annotations-textarea" placeholder="Enter your annotations here"></textarea>
+    </div>
+  </div>
+
+  <div class="comments-section">
+    <h2 class="section-title" style="color: #fff;">Leave a Comment</h2>
+    <form class="comment-form">
+      <input class="comment-input" type="text" placeholder="Your Name">
+      <input class="comment-input" type="email" placeholder="Your Email">
+      <textarea class="comment-input" placeholder="Your Comment"></textarea>
+      <button class="comment-button">Submit</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
