@@ -71,11 +71,14 @@
     color: #fff; /* White */
     border-radius: 20px; /* Curved edges */
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, border 0.3s, color 0.3s;
+    border: 2px solid #82b5d8; /* Light Blue border */
   }
 
   .read-more-button:hover {
     background-color: #5c8fb1; /* Darker Blue on hover */
+    border: 2px solid #5c8fb1; /* Darker Blue border on hover */
+    color: #fff; /* White color on hover */
   }
 </style>
 </head>
@@ -103,36 +106,7 @@
     <p>Short excerpt 2.</p>
     <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
   </div>
-  <div class="blog-card">
-    <h2>Blog title 3</h2>
-    <p>Short excerpt 3.</p>
-    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
-  </div>
-  <div class="blog-card">
-    <h2>Blog title 4</h2>
-    <p>Short excerpt 4.</p>
-    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
-  </div>
-  <div class="blog-card">
-    <h2>Blog title 5</h2>
-    <p>Short excerpt 5.</p>
-    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
-  </div>
-  <div class="blog-card">
-    <h2>Blog title 6</h2>
-    <p>Short excerpt 6.</p>
-    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
-  </div>
-  <div class="blog-card">
-    <h2>Blog title 7</h2>
-    <p>Short excerpt 7.</p>
-    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
-  </div>
-  <div class="blog-card">
-    <h2>Blog title 8</h2>
-    <p>Short excerpt 8.</p>
-    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
-  </div>
+  <!-- Repeat for other blog cards -->
 </div>
 
 <script>
