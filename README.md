@@ -65,7 +65,7 @@
   <a class="active" href="#">HOME</a>
   <a href="blog.html" >BLOG</a>
   <a href="About.html">ABOUT</a>
-  <a href="#">CONTACT</a>
+  <a href="contact.html">CONTACT</a>
   <button class="menu-button">&#9776; Menu</button>
 </div>
 
