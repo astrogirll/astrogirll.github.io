@@ -63,7 +63,7 @@
 
 <div class="navbar">
   <a class="active" href="#">HOME</a>
-  <a href="blog.html" >BLOG</a>
+  <a href="blognavbar.html" >BLOG</a>
   <a href="About.html">ABOUT</a>
   <a href="contact.html">CONTACT</a>
   <button class="menu-button">&#9776; Menu</button>
@@ -81,7 +81,7 @@
   <div class="blog-card">
     <h2>Blog title 2</h2>
     <p>short excerpt</p>
-    <a href="#">Read More</a>
+    <a href="blog.html">Read More</a>
   </div>
   <!-- Add more blog cards here -->
 </div>
