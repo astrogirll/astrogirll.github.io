@@ -86,7 +86,7 @@
 
 <div class="navbar">
   <a class="active" href="#">HOME</a>
-  <a href="blog.html" >BLOG</a>
+  <a href="blognavbar.html" >BLOG</a>
   <a href="About.html">ABOUT</a>
   <a href="contact.html">CONTACT</a>
   <button class="menu-button">&#9776; Menu</button>
@@ -105,8 +105,39 @@
     <h2>Blog title 2</h2>
     <p>Short excerpt 2.</p>
     <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
-  </div>
-  <!-- Repeat for other blog cards -->
+  </div> 
+
+  <div class="blog-card">
+    <h2>Blog title 3</h2>
+    <p>Short excerpt.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+  </div> 
+   <div class="blog-card">
+    <h2>Blog title 4</h2>
+    <p>Short excerpt.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+  </div> 
+   <div class="blog-card">
+    <h2>Blog title 5</h2>
+    <p>Short excerpt.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+  </div> 
+   <div class="blog-card">
+    <h2>Blog title 6</h2>
+    <p>Short excerpt 6.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+  </div> 
+   <div class="blog-card">
+    <h2>Blog title 7</h2>
+    <p>Short excerpt 7.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+  </div> 
+   <div class="blog-card">
+    <h2>Blog title 8</h2>
+    <p>Short excerpt 8.</p>
+    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+  </div> 
+ 
 </div>
 
 <script>
