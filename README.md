@@ -21,7 +21,7 @@
   .navbar a {
     float: left;
     display: block;
-    color: #fff; /* White */
+    color: #000000; /* Black */
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -31,15 +31,6 @@
   .navbar a:hover {
     background-color: #f2f7f9; /* Snowy White */
     color: #7f9c9f; /* Icy Blue */
-  }
-
-  .menu-button {
-    display: none;
-    background-color: #7f9c9f; /* Icy Blue */
-    color: #fff; /* White */
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
   }
 
   .blogs-container {
@@ -85,12 +76,11 @@
 <body>
 
 <div class="navbar">
-  <a class="active" href="#">HOME</a>
-  <a href="blognavbar.html" >BLOG</a>
-  <a href="About.html">ABOUT</a>
-  <a href="contact.html">CONTACT</a>
-  <button class="menu-button">&#9776; Menu</button>
-</div>
+  <a class="active" href="#"><b>HOME<</b>/a>
+  <a href="blognavbar.html" ><b>BLOG</b></a>
+  <a href="About.html"><b>ABOUT</b></a>
+  <a href="contact.html"><b>CONTACT</b>b</a>
+  </div>
 
 <h1>Welcome to Astrogirl</h1>
 <p>Your ultimate source for Robotics Insights</p>
