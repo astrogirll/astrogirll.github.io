@@ -21,7 +21,7 @@
   .navbar a {
     float: left;
     display: block;
-    color: #000000; /* Black */
+    color: #fff; /* Black */
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -76,10 +76,10 @@
 <body>
 
 <div class="navbar">
-  <a class="active" href="#"><b>HOME<</b>/a>
-  <a href="blognavbar.html" ><b>BLOG</b></a>
-  <a href="About.html"><b>ABOUT</b></a>
-  <a href="contact.html"><b>CONTACT</b>b</a>
+  <a class="active" href="#">HOME</a>
+  <a href="blognavbar.html" >BLOG</a>
+  <a href="About.html">ABOUT</a>
+  <a href="contact.html">CONTACT</a>
   </div>
 
 <h1>Welcome to Astrogirl</h1>
