@@ -77,7 +77,6 @@
 
 <div class="navbar">
   <a class="active" href="#">HOME</a>
-  <a href="blognavbar.html" >BLOG</a>
   <a href="About.html">ABOUT</a>
   <a href="contact.html">CONTACT</a>
   </div>
