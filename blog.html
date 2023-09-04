@@ -113,13 +113,56 @@
     border: none;
     cursor: pointer;
   }
+  .back-link {
+            text-align: left;
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #5c8fb1; /* Darker Blue */
+            color: #fff; /* White */
+            padding: 10px 20px;
+            border-radius: 20px; /* Curved edges */
+            text-decoration: none;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #000; /* black on hover */
+        }
+
+        /* Style for the arrow inside a circle with hover effect */
+        .back-arrow {
+            background-color: #82b5d8; /* Black color for the circle */
+            color: #fff; /* White color for the arrow */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        .back-arrow:hover {
+            background-color: #5c8fb1; /* Darker Blue on hover */
+        }
 </style>
 </head>
 <body>
 
 <div class="main-container">
+   <a class="back-arrow" href="https://astrogirll.github.io" target="_blank">&#8592;</a>
   <div class="section">
-    <h1 class="section-title" style="color: #3478b5;">Discover the Winter Wonders</h1>
+    <h1 class="section-title" style="color: #3478b5;">Discover the robotics Wonders</h1>
   </div>
 
   <div class="content-section">
@@ -148,8 +191,14 @@
     </div>
   </div>
 </div>
+<a class="back-button" href="#">Back to Top</a>
 
 <script>
+    const backLink = document.querySelector(".back-link a");
+
+    backLink.addEventListener("click", () => {
+        window.scrollTo(0, 0);
+    });
  const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
 
   // Display existing comments
