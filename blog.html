@@ -3,144 +3,256 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vertical Blog Cards</title>
+<title>Blog title</title>
 <style>
-body {
+   :root {
+    --annotations-height: calc(100vh / 8);
+  }
+
+  body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f5f9; /* Snowy White */
-    color: #333; /* Dark Gray */
-    text-align: center;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
   }
 
-  .blogs-container {
+  .main-container {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Gap between cards */
-    padding: 20px;
     align-items: center;
-  }
-
-  .blog-card {
-    background-color: #bde0fe; /* Winter Blue */
-    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    box-sizing: border-box;
-    width: 80%; /* Adjust card width */
-    position: relative;
   }
 
-  .view-count {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    color: #005b96; /* Deep Blue */
-    font-size: 14px;
+  .section {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
-  h2 {
-    color: #005b96; /* Deep Blue */
+  .section-title {
+    font-size: 24px;
+    color: #3478b5; /* Blue Shade */
+    margin-bottom: 10px;
   }
 
-  p {
-    font-size: 16px;
-    line-height: 1.5;
+  .content-section {
+    display: flex;
+    flex-direction: column; /* Change to column */
+    width: 100%;
+    height: auto; /* Change to auto */
   }
-  </style>
+
+  .post-box {
+    margin-bottom: 20px; /* Add margin for separation */
+    padding: 20px;
+    background-color: #f0f0f0; /* Lightest Gray */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333; /* Dark Gray */
+  }
+
+  .post-content {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .annotations-box {
+    padding: 20px;
+    background-color: #f5f5f5; /* Light Gray */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333; /* Dark Gray */
+    height: auto; /* Change to auto */
+    overflow: auto;
+    margin-bottom: 10px; /* Add margin at the bottom */
+  }
+
+  .annotations-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+  }
+
+  .comments-section {
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+    background-color: #3478b5; /* Blue Shade */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff; /* White */
+    margin-top: 10px; /* Add margin at the top */
+  }
+
+  .comment-form {
+    margin-top: 20px;
+    text-align: center; /* Center align the comment form */
+  }
+
+  .comment-input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .comment-button {
+    background-color: #82b5d8; /* Light Blue */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+  .back-link {
+            text-align: left;
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #5c8fb1; /* Darker Blue */
+            color: #fff; /* White */
+            padding: 10px 20px;
+            border-radius: 20px; /* Curved edges */
+            text-decoration: none;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #000; /* black on hover */
+        }
+
+        /* Style for the arrow inside a circle with hover effect */
+        .back-arrow {
+            background-color: #82b5d8; /* Black color for the circle */
+            color: #fff; /* White color for the arrow */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        .back-arrow:hover {
+            background-color: #5c8fb1; /* Darker Blue on hover */
+        }
+</style>
 </head>
 <body>
 
-<div class="blogs-container">
-  <div class="blog-card">
-    <h2>Blog Title 1</h2>
-    <p>Short excerpt for Blog 1.</p>
-    <div class="view-count">Views: 0</div>
-   </div>
-
-  <div class="blog-card">
-    <h2>Blog Title 2</h2>
-    <p>Short excerpt for Blog 2. This excerpt is longer and will adjust the height of the card accordingly.</p>
-    <div class="view-count">Views: 0</div>
+<div class="main-container">
+   <a class="back-arrow" href="https://astrogirll.github.io" target="_blank">&#8592;</a>
+  <div class="section">
+    <h1 class="section-title" style="color: #3478b5;">Discover the robotics Wonders</h1>
   </div>
 
-  <div class="blog-card">
-    <h2>Blog Title 3</h2>
-    <p>Short excerpt for Blog 3.</p>
-    <div class="view-count">Views: 0</div>
-  </div>
-  
-  <div class="blog-card">
-    <h2>Blog Title 4</h2>
-    <p>Short excerpt for Blog 4. This excerpt is even longer and will continue to adjust the card's height accordingly.</p>
-    <div class="view-count">Views: 0</div>
-  </div>
-  
-  <div class="blog-card">
-    <h2>Blog Title 5</h2>
-    <p>Short excerpt for Blog 5.</p>
-    <div class="view-count">Views: 0</div>
-  </div>
-  
-  <div class="blog-card">
-    <h2>Blog Title 6</h2>
-    <p>Short excerpt for Blog 6.</p>
-    <div class="view-count">Views: 0</div>
-  </div>
-  
-  <div class="blog-card">
-    <h2>Blog Title 7</h2>
-    <p>Short excerpt for Blog 7.</p>
-    <div class="view-count">Views: 0</div>
+  <div class="content-section">
+    <div class="post-box">
+      <div class="post-content">
+        <p>This is the first paragraph of the blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Here's another paragraph with more insights about the topic. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+      </div>
     </div>
-  
-  <div class="blog-card">
-    <h2>Blog Title 8</h2>
-    <p>Short excerpt for Blog 8.</p>
-    <div class="view-count">Views: 0</div>
-   </div>
-  
-  <div class="blog-card">
-    <h2>Blog Title 9</h2>
-    <p>Short excerpt for Blog 9.</p>
-    <div class="view-count">Views: 0</div>
+
+    <div class="annotations-box">
+      <textarea class="annotations-textarea" placeholder="Enter your annotations here"></textarea>
     </div>
-  
-  <div class="blog-card">
-    <h2>Blog Title 10</h2>
-    <p>Short excerpt for Blog 10.</p>
-    <div class="view-count">Views: 0</div>
   </div>
-  
-  <div class="blog-card">
-    <h2>Blog Title 11</h2>
-    <p>Short excerpt for Blog 11.</p>
-    <div class="view-count">Views: 0</div>
-  </div>
-  
-  <div class="blog-card">
-    <h2>Blog Title 12</h2>
-    <p>Short excerpt for Blog 12.</p>
-    <div class="view-count">Views: 0</div>
+  <div class="comments-section">
+    <h2 class="section-title" style="color: #fff;">Leave a Comment</h2>
+    <form class="comment-form">
+      <input class="comment-input" type="text" id="name" placeholder="Your Name">
+      <input class="comment-input" type="email" id="email" placeholder="Your Email">
+      <textarea class="comment-input" id="comment" placeholder="Your Comment"></textarea>
+      <button class="comment-button" onclick="postComment()">Submit</button>
+    </form>
+    
+    <div class="posted-comments">
+      <!-- Comments will be displayed here -->
+    </div>
   </div>
 </div>
+<a class="back-button" href="#">Back to Top</a>
+
 <script>
-const blogCards = document.querySelectorAll(".blog-card");
+    const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
 
-  blogCards.forEach((card, index) => {
-    let views = 0;
-    const viewCount = card.querySelector(".view-count");
-    let hovered = false;
-
-    card.addEventListener("mouseover", () => {
-      if (!hovered) {
-        views++;
-        viewCount.textContent = `Views: ${views}`;
-        hovered = true;
-      }
-    });
+  // Display existing comments
+  const postedComments = document.querySelector(".posted-comments");
+  existingComments.forEach((comment, index) => {
+    postedComments.appendChild(createCommentElement(comment, index));
   });
-  </script>
+
+  function postComment() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const commentText = document.getElementById("comment").value;
+
+    if (name && email && commentText) {
+      const comment = {
+        name,
+        email,
+        commentText
+      };
+
+      // Save the new comment to local storage
+      existingComments.push(comment);
+      localStorage.setItem("comments", JSON.stringify(existingComments));
+
+      // Display the new comment
+      postedComments.appendChild(createCommentElement(comment, existingComments.length - 1));
+
+      // Clear input fields
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("comment").value = "";
+    }
+  }
+
+  function createCommentElement(comment, index) {
+    const commentElement = document.createElement("div");
+    commentElement.classList.add("comment");
+
+    commentElement.innerHTML = `
+      <p><strong>${comment.name}</strong> (${comment.email}):</p>
+      <p>${comment.commentText}</p>
+      <button class="delete-button" onclick="deleteComment(${index})">Delete</button>
+    `;
+
+    return commentElement;
+  }
+
+  function deleteComment(index) {
+    // Remove the comment from the local storage
+    existingComments.splice(index, 1);
+    localStorage.setItem("comments", JSON.stringify(existingComments));
+
+    // Remove the comment from the UI
+    const commentElements = document.querySelectorAll(".comment");
+    commentElements[index].remove();
+  }
+</script>
 </body>
 </html>
