@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog title</title>
 <style>
-  :root {
+   :root {
     --annotations-height: calc(100vh / 8);
   }
 
@@ -134,17 +134,78 @@
       <textarea class="annotations-textarea" placeholder="Enter your annotations here"></textarea>
     </div>
   </div>
-
   <div class="comments-section">
     <h2 class="section-title" style="color: #fff;">Leave a Comment</h2>
     <form class="comment-form">
-      <input class="comment-input" type="text" placeholder="Your Name">
-      <input class="comment-input" type="email" placeholder="Your Email">
-      <textarea class="comment-input" placeholder="Your Comment"></textarea>
-      <button class="comment-button">Submit</button>
+      <input class="comment-input" type="text" id="name" placeholder="Your Name">
+      <input class="comment-input" type="email" id="email" placeholder="Your Email">
+      <textarea class="comment-input" id="comment" placeholder="Your Comment"></textarea>
+      <button class="comment-button" onclick="postComment()">Submit</button>
     </form>
+    
+    <div class="posted-comments">
+      <!-- Comments will be displayed here -->
+    </div>
   </div>
 </div>
 
+<script>
+ const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
+
+  // Display existing comments
+  const postedComments = document.querySelector(".posted-comments");
+  existingComments.forEach((comment, index) => {
+    postedComments.appendChild(createCommentElement(comment, index));
+  });
+
+  function postComment() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const commentText = document.getElementById("comment").value;
+
+    if (name && email && commentText) {
+      const comment = {
+        name,
+        email,
+        commentText
+      };
+
+      // Save the new comment to local storage
+      existingComments.push(comment);
+      localStorage.setItem("comments", JSON.stringify(existingComments));
+
+      // Display the new comment
+      postedComments.appendChild(createCommentElement(comment, existingComments.length - 1));
+
+      // Clear input fields
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("comment").value = "";
+    }
+  }
+
+  function createCommentElement(comment, index) {
+    const commentElement = document.createElement("div");
+    commentElement.classList.add("comment");
+
+    commentElement.innerHTML = `
+      <p><strong>${comment.name}</strong> (${comment.email}):</p>
+      <p>${comment.commentText}</p>
+      <button class="delete-button" onclick="deleteComment(${index})">Delete</button>
+    `;
+
+    return commentElement;
+  }
+
+  function deleteComment(index) {
+    // Remove the comment from the local storage
+    existingComments.splice(index, 1);
+    localStorage.setItem("comments", JSON.stringify(existingComments));
+
+    // Remove the comment from the UI
+    const commentElements = document.querySelectorAll(".comment");
+    commentElements[index].remove();
+  }
+</script>
 </body>
 </html>
