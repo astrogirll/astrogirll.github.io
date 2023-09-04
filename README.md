@@ -75,9 +75,9 @@
 <body>
 
 <div class="navbar">
-  <a class="active" href="#">HOME</a>
-  <a href="About.html">ABOUT</a>
-  <a href="contact.html">CONTACT</a>
+  <a class="active" href="#"><strong>HOME</strong></a>
+  <a href="About.html"><strong>ABOUT</strong></a>
+  <a href="contact.html"><strong>CONTACT</strong></a>
   </div>
 
 <h1>Welcome to Astrogirl</h1>
