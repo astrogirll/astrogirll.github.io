@@ -85,8 +85,8 @@
 
 <div class="blogs-container">
   <div class="blog-card">
-    <h2>Blog title 1</h2>
-    <p>Short excerpt 1.</p>
+    <h2>Summer of Robotic laughter: Building my first robotic arm</h2>
+    <p>Discovering robotics and creating a robotic arm-a journey filled with learning and excitement.</p>
     <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
   </div>
   <div class="blog-card">
