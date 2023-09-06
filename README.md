@@ -87,7 +87,7 @@
   <div class="blog-card">
     <h2>Summer of Robotic laughter: Building my first robotic arm</h2>
     <p>Discovering robotics and creating a robotic arm-a journey filled with learning and excitement.</p>
-    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+    <a href="https://astrogirll.github.io/blog1.html" class="read-more-button">Read More</a>
   </div>
   <div class="blog-card">
     <h2>Blog title 2</h2>
