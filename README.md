@@ -90,9 +90,9 @@
     <a href="https://astrogirll.github.io/blog1.html" class="read-more-button">Read More</a>
   </div>
   <div class="blog-card">
-    <h2>Blog title 2</h2>
-    <p>Short excerpt 2.</p>
-    <a href="https://astrogirll.github.io/blog.html" class="read-more-button">Read More</a>
+    <h2>Revolutionizing Healthcare: A journey through Digital transformation with Dr. Surendra Ramamurthy</h2>
+    <p>Explore Dr. Surendra Ramamurthy's jorney, navigating the intersection of technology and healthcare, and envision a patient-centric, and technologically advanced future.</p>
+    <a href="https://astrogirll.github.io/blog2.html" class="read-more-button">Read More</a>
   </div> 
 
   <div class="blog-card">
