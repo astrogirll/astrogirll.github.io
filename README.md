@@ -85,16 +85,15 @@
 
 <div class="blogs-container">
   <div class="blog-card">
-    <h2>Summer of Robotic laughter: Building my first robotic arm</h2>
-    <p>Discovering robotics and creating a robotic arm-a journey filled with learning and excitement.</p>
-    <a href="https://astrogirll.github.io/blog1.html" class="read-more-button">Read More</a>
-  </div>
-  <div class="blog-card">
     <h2>Revolutionizing Healthcare: A journey through Digital transformation with Dr. Surendra Ramamurthy</h2>
     <p>Explore Dr. Surendra Ramamurthy's jorney, navigating the intersection of technology and healthcare, and envision a patient-centric, and technologically advanced future.</p>
     <a href="https://astrogirll.github.io/blog2.html" class="read-more-button">Read More</a>
   </div> 
-
+<div class="blog-card">
+    <h2>Summer of Robotic laughter: Building my first robotic arm</h2>
+    <p>Discovering robotics and creating a robotic arm-a journey filled with learning and excitement.</p>
+    <a href="https://astrogirll.github.io/blog1.html" class="read-more-button">Read More</a>
+  </div>
   <div class="blog-card">
     <h2>Blog title 3</h2>
     <p>Short excerpt.</p>
