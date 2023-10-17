@@ -290,9 +290,22 @@
             <p>Please contact tiwarinavya1808@gmail.com</p>
           </div>
         `;
+        
         break;
     }
   }
+  document.addEventListener("DOMContentLoaded", function () {
+  const chatbotButton = document.getElementById("chatbot-button");
+  const chatbot = document.getElementById("chatbot");
+
+  chatbotButton.addEventListener("click", function () {
+    if (chatbot.style.display === "none" || chatbot.style.display === "") {
+      chatbot.style.display = "block";
+    } else {
+      chatbot.style.display = "none";
+    }
+  });
+});
 </script>
 
 </body>
