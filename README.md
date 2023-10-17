@@ -70,7 +70,7 @@
     border: 2px solid #5c8fb1; /* Darker Blue border on hover */
     color: #fff; /* White color on hover */
   }
-.chatbot-button {
+   .chatbot-button {
     background-color: #00AEEF; /* Blue color for the chatbot button */
     color: #fff; /* White text color */
     border: none;
@@ -169,7 +169,6 @@
 
 <h1>Welcome to Astrogirl</h1>
 <p>Your ultimate source for Robotics Insights</p>
-
 <!-- Chatbot button -->
 <button class="chatbot-button" id="chatbot-button">&#128172;</button>
 
@@ -177,22 +176,12 @@
 <div class="chatbot" id="chatbot">
   <div class="chatbox" id="chatbox">
     <div id="chatbot-content">
-      <div class="chatbot-message">
-        <p>Hello, I am Astrobot. How can I help you today?</p>
-      </div>
-      <div class="chatbot-message">
-        <p>Would you like to read a blog on robotics or medicinal applications?</p>
-      </div>
+      <p class="chatbot-message">Hello, I am Astrobot. How can I help you today?</p>
+      <p class="chatbot-message">Would you like to read a blog on robotics or medicinal applications?</p>
       <div class="chatbot-buttons">
-        <button class="chatbot-button-option" onclick="window.location.href = 'https://astrogirll.github.io/blog2.html'">
-          <p>Medicinal Application</p>
-        </button>
-        <button class="chatbot-button-option" onclick="window.location.href = 'https://astrogirll.github.io/blog1.html'">
-          <p>Robotic Arm</p>
-        </button>
-        <button class="chatbot-button-option" onclick="window.location.href = 'https://astrogirll.github.io/About.html'">
-          <p>Know more about the author</p>
-        </button>
+        <button class="chatbot-button-option" onclick="window.location.href = 'https://astrogirll.github.io/blog2.html'">Medicinal Application</button>
+        <button class="chatbot-button-option" onclick="window.location.href = 'https://astrogirll.github.io/blog1.html'">Robotic Arm</button>
+        <button class="chatbot-button-option" onclick="window.location.href = 'https://astrogirll.github.io/About.html'">Know more about the author</button>
       </div>
     </div>
   </div>
@@ -215,12 +204,8 @@
 <script>
   const menuButton = document.querySelector(".menu-button");
   const navbar = document.querySelector(".navbar");
-
-  menuButton.addEventListener("click", () => {
-    navbar.classList.toggle("responsive");
-  });
-
- const chatbotButton = document.getElementById("chatbot-button");
+// JavaScript to toggle the chatbot visibility
+  const chatbotButton = document.getElementById("chatbot-button");
   const chatbot = document.getElementById("chatbot");
 
   chatbotButton.addEventListener("click", () => {
@@ -237,14 +222,11 @@
       // Display user message on the right
       chatbox.innerHTML += `<div class="user-message">${userMessage}</div>`;
 
-      // Process user input and provide responses
-      handleUserInput(userMessage);
-      
       // Clear the user input
       userInput.value = "";
 
-      // Scroll to the bottom of the chatbox to show the latest messages
-      chatbox.scrollTop = chatbox.scrollHeight;
+      // Process user input and provide responses
+      handleUserInput(userMessage);
     }
   });
 
@@ -255,57 +237,37 @@
     switch (userMessage.toLowerCase()) {
       case "medicinal applications":
         chatbotContent.innerHTML += `
-          <div class="chatbot-message">
-            <p>Great choice! Here's the blog on medicinal applications:</p>
-            <button class="chatbot-button-option" onclick="window.location.href = 'https://astrogirll.github.io/blog2.html'">
-              <p>Read Medicinal Application Blog</p>
-            </button>
-          </div>
+          <p class="chatbot-message">Great choice! Here's the blog on medicinal applications:</p>
+          <button class="chatbot-button-option" onclick="window.location.href = 'https://astrogirll.github.io/blog2.html'">Read Medicinal Application Blog</button>
         `;
         break;
       case "robotic arm":
         chatbotContent.innerHTML += `
-          <div class="chatbot-message">
-            <p>Sure thing! Here's the blog on building a robotic arm:</p>
-            <button class="chatbot-button-option" onclick="window.location.href = 'https://astrogirll.github.io/blog1.html'">
-              <p>Read Robotic Arm Blog</p>
-            </button>
-          </div>
+          <p class="chatbot-message">Sure thing! Here's the blog on building a robotic arm:</p>
+          <button class="chatbot-button-option" onclick="window.location.href = 'https://astrogirll.github.io/blog1.html'">Read Robotic Arm Blog</button>
         `;
         break;
       case "know more about the author":
         chatbotContent.innerHTML += `
-          <div class="chatbot-message">
-            <p>You can know more about the author by visiting their About page:</p>
-            <button class="chatbot-button-option" onclick="window.location.href = 'https://astrogirll.github.io/About.html'">
-              <p>About the Author</p>
-            </button>
-          </div>
+          <p class="chatbot-message">You can know more about the author by visiting their About page:</p>
+          <button class="chatbot-button-option" onclick="window.location.href = 'https://astrogirll.github.io/About.html'">About the Author</button>
         `;
         break;
       default:
         chatbotContent.innerHTML += `
-          <div class="chatbot-message">
-            <p>Thank you for your message. Our team will get back to you.</p>
-            <p>Please contact tiwarinavya1808@gmail.com</p>
-          </div>
+          <p class="chatbot-message">Thank you for your message. Our team will get back to you.</p>
+          <p class="chatbot-message">Please contact tiwarinavya1808@gmail.com</p>
         `;
-        
         break;
     }
   }
-  document.addEventListener("DOMContentLoaded", function () {
-  const chatbotButton = document.getElementById("chatbot-button");
-  const chatbot = document.getElementById("chatbot");
 
-  chatbotButton.addEventListener("click", function () {
-    if (chatbot.style.display === "none" || chatbot.style.display === "") {
-      chatbot.style.display = "block";
-    } else {
-      chatbot.style.display = "none";
-    }
+
+  menuButton.addEventListener("click", () => {
+    navbar.classList.toggle("responsive");
   });
-});
+  
+  
 </script>
 
 </body>
