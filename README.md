@@ -136,7 +136,7 @@
   const chatbotButton = document.getElementById("chatbot-button");
 
   chatbotButton.addEventListener("click", () => {
-    window.location.href = "chatbot.html";
+    window.location.href = "Chatbot.html";
   });
 </script>
 
