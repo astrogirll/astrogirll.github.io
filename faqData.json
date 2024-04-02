@@ -8,6 +8,6 @@
       "question": "How do robots move?",
       "answer": "Robots move through a combination of motors, sensors, and controllers. Depending on the type of robot, movement can be achieved using wheels, tracks, legs, or articulated arms."
     },
-    // Add more FAQ entries as needed
+
   ]
 }
