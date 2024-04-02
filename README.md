@@ -1,9 +1,25 @@
+To optimize the webpage for search engines, we can add relevant meta tags, descriptive titles, and proper heading structures. Below is the modified code with these optimizations:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Astrogirl - Your ultimate source for Robotics Insights">
 <title>Astrogirl - Robotics Blog</title>
+<!-- Meta tags for search engine optimization -->
+<meta name="keywords" content="Astrogirl, Robotics Blog, Robotics Insights">
+<meta name="author" content="Astrogirl Team">
+<!-- Open Graph meta tags for better social sharing -->
+<meta property="og:title" content="Astrogirl - Robotics Blog">
+<meta property="og:description" content="Your ultimate source for Robotics Insights">
+<meta property="og:image" content="https://example.com/og-image.jpg">
+<meta property="og:url" content="https://example.com">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Canonical URL for better SEO -->
+<link rel="canonical" href="https://example.com">
+
 <style>
   body {
     margin: 0;
@@ -180,7 +196,9 @@
 <!-- Chatbot button -->
 <button class="chatbot-button" id="chatbot-button" aria-label="Open Chatbot">&#128172;</button>
 
-<!-- Chatbot container (hidden by default) -->
+<!-- Chatbot container (hidden by
+
+ default) -->
 <div class="chatbot" id="chatbot" aria-hidden="true" aria-live="polite">
   <div class="chatbox" id="chatbox">
     <div id="chatbot-content">
