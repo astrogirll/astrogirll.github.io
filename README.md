@@ -178,10 +178,10 @@
 <h1>Welcome to Astrogirl</h1>
 <p>Your ultimate source for Robotics Insights</p>
 <!-- Chatbot button -->
-<button class="chatbot-button" id="chatbot-button">&#128172;</button>
+<button class="chatbot-button" id="chatbot-button" aria-label="Open Chatbot">&#128172;</button>
 
 <!-- Chatbot container (hidden by default) -->
-<div class="chatbot" id="chatbot">
+<div class="chatbot" id="chatbot" aria-hidden="true" aria-live="polite">
   <div class="chatbox" id="chatbox">
     <div id="chatbot-content">
       <p class="chatbot-message">Hello, I am Astrobot. How can I help you today?</p>
@@ -193,7 +193,7 @@
       </div>
     </div>
   </div>
-  <input type="text" class="chat-input" id="user-input" placeholder="Type your message and press Enter">
+  <input type="text" class="chat-input" id="user-input" placeholder="Type your message and press Enter" aria-label="Type your message and press Enter">
 </div>
 
 <div class="blogs-container">
@@ -218,6 +218,7 @@
 
   chatbotButton.addEventListener("click", () => {
     chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+    chatbot.setAttribute("aria-hidden", chatbot.style.display === "none");
   });
 
   // Handle user input and chatbot responses
