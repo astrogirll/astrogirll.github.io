@@ -1,6 +1,3 @@
-To optimize the webpage for search engines, we can add relevant meta tags, descriptive titles, and proper heading structures. Below is the modified code with these optimizations:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
