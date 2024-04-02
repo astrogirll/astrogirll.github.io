@@ -42,60 +42,74 @@
 </div>
 
 <script>
-// Load FAQ data from JSON file
-async function loadFAQData() {
-  try {
+  // Load the Universal Sentence Encoder model
+  async function loadModel() {
+    return await use.load();
+  }
+
+  // Function to load FAQ data from JSON file
+  async function loadFAQData() {
     const response = await fetch('faqData.json');
-    const faqData = await response.json();
-    return faqData.questions;
-  } catch (error) {
-    console.error('Error loading FAQ data:', error);
-    return []; // Return an empty array in case of error
+    const data = await response.json();
+    return data.questions;
   }
-}
 
-// Function to calculate similarity between user input and FAQ questions
-function calculateSimilarity(userInput, faqQuestions) {
-  // Placeholder function for similarity calculation (replace with your implementation)
-  return faqQuestions.map(question => Math.random());
-}
+  // Function to calculate similarity between user input and FAQ questions
+  function calculateSimilarity(userInput, faqQuestions) {
+    const similarityScores = faqQuestions.map(question => {
+      return useSimilarity(userInput, question.question);
+    });
+    return similarityScores;
+  }
 
-// Function to display a message in the chat interface
-function displayMessage(sender, message) {
-  const chatMessages = document.getElementById("chat-messages");
-  const messageElement = document.createElement("div");
-  messageElement.textContent = `${sender}: ${message}`;
-  chatMessages.appendChild(messageElement);
-  chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to the bottom
-}
+  // Function to display a message in the chat interface
+  function displayMessage(sender, message) {
+    const chatMessages = document.getElementById("chat-messages");
+    const messageElement = document.createElement("div");
+    messageElement.textContent = `${sender}: ${message}`;
+    chatMessages.appendChild(messageElement);
+    chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to the bottom
+  }
 
-// Function to handle user input
-async function handleUserInput() {
-  const userInput = document.getElementById("user-input").value;
-  displayMessage("You", userInput); // Display user input in the chat
+  // Function to handle user input
+  async function handleUserInput() {
+    const userInput = document.getElementById("user-input").value;
+    displayMessage("You", userInput); // Display user input in the chat
 
-  // Load FAQ data and calculate similarity
-  const faqQuestions = await loadFAQData();
-  const similarityScores = calculateSimilarity(userInput, faqQuestions);
+    // Load FAQ data from JSON file
+    const faqQuestions = await loadFAQData();
 
-  // Process similarity scores and display response
-  const maxSimilarityIndex = similarityScores.indexOf(Math.max(...similarityScores));
-  if (similarityScores[maxSimilarityIndex] >= 0.5) {
+    // Calculate similarity between user input and FAQ questions
+    const similarityScores = calculateSimilarity(userInput, faqQuestions);
+    const maxSimilarityIndex = similarityScores.indexOf(Math.max(...similarityScores));
     const maxSimilarityQuestion = faqQuestions[maxSimilarityIndex];
-    displayMessage("Chatbot", maxSimilarityQuestion.answer); // Display FAQ answer
-  } else {
-    displayMessage("Chatbot", "Sorry, I couldn't find an answer to that question. Please try another question or contact support for assistance.");
+
+    // Display FAQ answer or default message
+    if (similarityScores[maxSimilarityIndex] >= 0.5) {
+      displayMessage("Chatbot", maxSimilarityQuestion.answer); // Display FAQ answer
+    } else {
+      displayMessage("Chatbot", "Sorry, I couldn't find an answer to that question. Please try another question or contact support for assistance.");
+    }
+    document.getElementById("user-input").value = ""; // Clear the input field
   }
 
-  document.getElementById("user-input").value = ""; // Clear the input field
-}
+  // Event listener for user input
+  document.getElementById("user-input").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+      handleUserInput();
+    }
+  });
 
-// Event listener for user input
-document.getElementById("user-input").addEventListener("keyup", function(event) {
-  if (event.key === "Enter") {
-    handleUserInput();
-  }
-});
+  // Load Universal Sentence Encoder model and calculate similarity
+  let use, useSimilarity;
+  (async () => {
+    use = await loadModel();
+    useSimilarity = (input1, input2) => {
+      const embeddings1 = use.embed(input1);
+      const embeddings2 = use.embed(input2);
+      return tf.dot(embeddings1, embeddings2).dataSync()[0];
+    };
+  })();
 </script>
 
 </body>
