@@ -1,0 +1,13 @@
+{
+  "questions": [
+    {
+      "question": "What is a robotic arm?",
+      "answer": "A robotic arm is a type of mechanical arm, usually programmable, with similar functions to a human arm. It's commonly used in industrial applications for tasks like welding, painting, and assembly."
+    },
+    {
+      "question": "How do robots move?",
+      "answer": "Robots move through a combination of motors, sensors, and controllers. Depending on the type of robot, movement can be achieved using wheels, tracks, legs, or articulated arms."
+    },
+    // Add more FAQ entries as needed
+  ]
+}
