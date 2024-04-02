@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robotics FAQ Chatbot</title>
+<!-- Add TensorFlow.js library -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<style>
+  /* CSS styles for the chatbot interface */
+  .chat-container {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+
+  .chat-messages {
+    height: 300px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+  }
+
+  .chat-input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="chat-container">
+  <h2>Robotics FAQ Chatbot</h2>
+  <div class="chat-messages" id="chat-messages"></div>
+  <input type="text" class="chat-input" id="user-input" placeholder="Ask a question...">
+</div>
+
+<script>
+  // Load the Universal Sentence Encoder model
+  async function loadModel() {
+    return await use.load();
+  }
+
+  // Function to calculate similarity between user input and FAQ questions
+  function calculateSimilarity(userInput, faqQuestions) {
+    const similarityScores = faqQuestions.map(question => {
+      return useSimilarity(userInput, question);
+    });
+    return similarityScores;
+  }
+
+  // Function to display a message in the chat interface
+  function displayMessage(sender, message) {
+    const chatMessages = document.getElementById("chat-messages");
+    const messageElement = document.createElement("div");
+    messageElement.textContent = `${sender}: ${message}`;
+    chatMessages.appendChild(messageElement);
+    chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to the bottom
+  }
+
+  // Function to handle user input
+  async function handleUserInput() {
+    const userInput = document.getElementById("user-input").value;
+    displayMessage("You", userInput); // Display user input in the chat
+
+    // Calculate similarity between user input and FAQ questions
+    const similarityScores = calculateSimilarity(userInput, Object.keys(faqDatabase));
+    const maxSimilarityIndex = similarityScores.indexOf(Math.max(...similarityScores));
+    const maxSimilarityQuestion = Object.keys(faqDatabase)[maxSimilarityIndex];
+
+    // Display FAQ answer or default message
+    if (similarityScores[maxSimilarityIndex] >= 0.5) {
+      displayMessage("Chatbot", faqDatabase[maxSimilarityQuestion]); // Display FAQ answer from the database
+    } else {
+      displayMessage("Chatbot", "Sorry, I couldn't find an answer to that question. Please try another question or contact support for assistance.");
+    }
+    document.getElementById("user-input").value = ""; // Clear the input field
+  }
+
+  // Event listener for user input
+  document.getElementById("user-input").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+      handleUserInput();
+    }
+  });
+
+  // Load Universal Sentence Encoder model and calculate similarity
+  let use, useSimilarity;
+  (async () => {
+    use = await loadModel();
+    useSimilarity = (input1, input2) => {
+      const embeddings1 = use.embed(input1);
+      const embeddings2 = use.embed(input2);
+      return tf.dot(embeddings1, embeddings2).dataSync()[0];
+    };
+  })();
+</script>
+
+</body>
+</html>
