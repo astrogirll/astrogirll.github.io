@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -157,6 +158,13 @@
     text-align: left;
     cursor: pointer;
   }
+
+  /* Responsive design */
+  @media only screen and (max-width: 768px) {
+    .blog-card {
+      width: calc(100% - 20px); /* Full width for single card */
+    }
+  }
 </style>
 </head>
 <body>
@@ -165,7 +173,7 @@
   <a class="active" href="#"><strong>HOME</strong></a>
   <a href="About.html"><strong>ABOUT</strong></a>
   <a href="contact.html"><strong>CONTACT</strong></a>
-  </div>
+</div>
 
 <h1>Welcome to Astrogirl</h1>
 <p>Your ultimate source for Robotics Insights</p>
@@ -191,10 +199,10 @@
 <div class="blogs-container">
   <div class="blog-card">
     <h2>Revolutionizing Healthcare: A journey through Digital transformation with Dr. Surendra Ramamurthy</h2>
-    <p>Explore Dr. Surendra Ramamurthy's jorney, navigating the intersection of technology and healthcare, and envision a patient-centric, and technologically advanced future.</p>
+    <p>Explore Dr. Surendra Ramamurthy's journey, navigating the intersection of technology and healthcare, and envision a patient-centric, and technologically advanced future.</p>
     <a href="https://astrogirll.github.io/blog2.html" class="read-more-button">Read More</a>
   </div> 
-<div class="blog-card">
+  <div class="blog-card">
     <h2>Summer of Robotic laughter: Building my first robotic arm</h2>
     <p>Discovering robotics and creating a robotic arm-a journey filled with learning and excitement.</p>
     <a href="https://astrogirll.github.io/blog1.html" class="read-more-button">Read More</a>
@@ -204,7 +212,7 @@
 <script>
   const menuButton = document.querySelector(".menu-button");
   const navbar = document.querySelector(".navbar");
-// JavaScript to toggle the chatbot visibility
+  // JavaScript to toggle the chatbot visibility
   const chatbotButton = document.getElementById("chatbot-button");
   const chatbot = document.getElementById("chatbot");
 
@@ -266,8 +274,6 @@
   menuButton.addEventListener("click", () => {
     navbar.classList.toggle("responsive");
   });
-  
-  
 </script>
 
 </body>
